@@ -1,0 +1,34 @@
+{
+  "apiVersion": "v1",
+  "kind": "K8sSecurityFindings",
+  "metadata": {
+    "cluster": "minikube",
+    "scanDate": "2024-10-03T10:00:00Z"
+  },
+  "findings": [
+    {
+      "id": "CIS-1.1.1",
+      "title": "Ensure that the API server pod specification file permissions are set to 644 or more restrictive",
+      "severity": "High",
+      "status": "Failed",
+      "description": "The API server pod specification file should have permissions set to at least 644.",
+      "remediation": "Update file permissions for the API server pod specification file."
+    },
+    {
+      "id": "CIS-1.2.1",
+      "title": "Ensure that the --kubelet-certificate-authority argument is set as appropriate",
+      "severity": "Medium",
+      "status": "Failed",
+      "description": "The --kubelet-certificate-authority flag should be set to point to a trusted certificate authority.",
+      "remediation": "Set the --kubelet-certificate-authority flag to a trusted CA."
+    },
+    {
+      "id": "CIS-1.2.3",
+      "title": "Ensure that the --profiling argument is set to false",
+      "severity": "Low",
+      "status": "Passed",
+      "description": "Profiling should be disabled on Kubernetes API server to avoid unnecessary exposure.",
+      "remediation": "Set the --profiling argument to false in the API server configuration."
+    }
+  ]
+}
